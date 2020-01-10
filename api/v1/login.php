@@ -30,7 +30,7 @@ else
 	}
 	else
 	{
-		$response = array("code" => "401", "data" => array("message" =>"UNAUTHORIZED - Invalid user_name or password"));
+		$response = array("code" => "401", "data" => array("message" =>"UNAUTHORIZED - Invalid username or password"));
 	}
 }
 
