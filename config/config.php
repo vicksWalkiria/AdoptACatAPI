@@ -44,4 +44,34 @@ class db{
 
 		return $token;
 	}
+
+
+	/////////// PHASE #3 isTokenValid($user_id, token)
+	function isTokenValid($id, $token)
+	{
+		$sql = 'SELECT "users".id FROM users WHERE "users".token = \''.$token.'\'';
+
+		try{
+			$db= new db();
+			$db = $db->connectionDB();
+			$result = $db->query($sql);
+			$users = $result ->fetchAll(PDO::FETCH_OBJ);
+
+			if(count($users) > 0){
+				return true;
+			}
+			else
+			{
+				return false;
+			}
+		}catch(PDOException $e)
+		{
+			$response = array("code" => "500", "data" => $e->getMessage());
+			print_r($response);
+		}
+		$result = null;
+		$db = null;
+}
+
+
 }

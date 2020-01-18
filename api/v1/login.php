@@ -26,7 +26,8 @@ else
 	{
 
 		$id = $users[0]->id;
-		$response = array("code" => "200", "data" => array("message" =>"OK", "token" => $db->generateToken($id))); 
+		// PHASE # modification => return user_id
+		$response = array("code" => "200", "data" => array("message" =>"OK", "token" => $db->generateToken($id), "user_id" => $id)); 
 	}
 	else
 	{
