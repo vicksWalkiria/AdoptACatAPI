@@ -49,7 +49,7 @@ class db{
 	/////////// PHASE #3 isTokenValid($user_id, token)
 	function isTokenValid($id, $token)
 	{
-		$sql = 'SELECT "users".id FROM users WHERE "users".token = \''.$token.'\'';
+		$sql = 'SELECT users.id FROM users WHERE users.token = \''.$token.'\'';
 
 		try{
 			$db= new db();

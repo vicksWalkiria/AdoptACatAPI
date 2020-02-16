@@ -11,7 +11,7 @@ $token = $_GET['token'];
 $adoption = $_GET['adoption'];
 
 $db= new db();
-if(strlen($user_id) == 0 || strlen($token) == 0 || strlen($adoption) == 0)//|| !$db->isTokenValid($user_id, $token))
+if(strlen($user_id) == 0 || strlen($token) == 0 || strlen($adoption) == 0|| !$db->isTokenValid($user_id, $token))
 {
  	$response = array("code" => "400", "data" => "You must provide valid params");
 }
